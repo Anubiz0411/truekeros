@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+truekeros_db.sqlite3
 
 # Distribution / packaging
 .Python
@@ -20,6 +21,7 @@ lib64/
 parts/
 sdist/
 var/
+truekeros_db.sqlite3
 truekerosites/settings/local.py
 *.egg-info/
 .installed.cfg
