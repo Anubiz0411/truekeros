@@ -99,22 +99,8 @@ AUTHENTICATION_BACKENDS = (
 SOCIALACCOUNT_QUERY_EMAIL= True
 
 SOCIALACCOUNT_PROVIDERS = {
-    'METHOD': 'oauth2',
+        'METHOD': 'oauth2',
         'SCOPE': ['email',],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'FIELDS': [
-            'id',
-            'email',
-            'name',
-            'first_name',
-            'last_name',
-            'verified',
-            'locale',
-            'timezone',
-            'link',
-            'gender',
-            'updated_time',
-        ],
 }
 
 
