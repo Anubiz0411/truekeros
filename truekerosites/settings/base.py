@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,14 +44,15 @@ INSTALLED_APPS = [
     'articulo',
     'storages',
 
-    #All auteticatios
-
+    # The Django sites framework is required
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # ... include the providers you want to enable:
 
-
+    'allauth.socialaccount.providers.facebook',
  
 ]
 
@@ -87,12 +87,11 @@ TEMPLATES = [
     },
 ]
 
-
 """
 Configuaración de la aplicación django-allauth
 """
 
-'#Se especifica el sistema de autenticación que se va a utilizar.'
+#Se especifica el sistema de autenticación que se va a utilizar.
 AUTHENTICATION_BACKENDS = (
 
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -116,9 +115,9 @@ usuario se este registrando.
 """
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
-        'SCOPE': ['email'],
-        'METHOD': 'oauth2'  # instead of 'oauth2'
-    },
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile',]
+    }
 }
 
 WSGI_APPLICATION = 'truekerosites.wsgi.application'
