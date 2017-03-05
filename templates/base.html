@@ -32,10 +32,12 @@
                     {% if user.is_authenticated %}
                     <li><a class="icon-user">{{user}}</a></li>
                     <li><a class="icon-plus" href="{% url 'crear_articulo' %}">Post</a></li>
+                    <li><a class="icon-plus" href="{% url 'home.contact' %}">Contactanos</a></li>
                     <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
                     {% else %}
                     <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>
                     <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarse</a></li>
+                    <li><a class="icon-plus" href="{% url 'home.contact' %}">Contactanos</a></li>
                     {% endif %}
           </ul>
          <!-- <ul class="left hide-on-med-and-down">
@@ -50,8 +52,9 @@
           <ul id="mobile-demo" class="side-nav">
             <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
-                <li class="bold"><a href="#" class="waves-effect waves-teal">Iniciar Secion</a></li>
-                <li class="bold"><a href="#" class="waves-effect waves-teal">Registrate</a></li>
+                <li class="bold"><a href="#" class="waves-effect waves-teal">Iniciar Sesión</a></li>
+                <li class="bold"><a href="#" class="waves-effect waves-teal">Regístrate</a></li>
+                <li class="bold"><a href="#" class="waves-effect waves-teal">Contactanos</a></li>
               </ul>
             </li>
           </ul>
