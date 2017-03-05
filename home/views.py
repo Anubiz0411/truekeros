@@ -1,3 +1,6 @@
+#!usr/local/bin
+# coding: latin-1
+
 from django.shortcuts import render
 from django.template import RequestContext
 

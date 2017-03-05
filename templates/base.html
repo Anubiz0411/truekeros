@@ -25,15 +25,13 @@
        <div class="navbar-fixed">
        <nav>
         <div class="nav-wrapper teal">
-          <a href="#!" class="brand-logo center">TrueKeros</a>
+          <a href="{% url 'home.index' %}" class="brand-logo" >TrueKeros</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="{% url 'articulo:lista_articulos' %}" class="icon-home">Home</a></li>
+            <li><a href="#" class="icon-home">Home</a></li>
                     {% if user.is_authenticated %}
                     <li><a class="icon-user">{{user}}</a></li>
-                    {% if user.username == 'admin' %}
-                    <li><a class="icon-plus" href="{% url 'articulo:crear_articulo' %}">Post</a></li>
-                    {% endif %}
+                    <li><a class="icon-plus" href="{% url 'crear_articulo' %}">Post</a></li>
                     <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
                     {% else %}
                     <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>

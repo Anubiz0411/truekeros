@@ -114,6 +114,12 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 Información que la aplicación solicitará a facebok, cuando un
 usuario se este registrando.
 """
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email'],
+        'METHOD': 'oauth2'  # instead of 'oauth2'
+    },
+}
 
 
 WSGI_APPLICATION = 'truekerosites.wsgi.application'
@@ -186,8 +192,8 @@ MEDIA_URL = '/media/'
 # EMAIL SETTINGS
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = 'andres.lopez0411@gmail.com'
-DEFAULT_FROM_EMAIL = 'andres.lopez0411@gmail.com'
-EMAIL_HOST_PASSWORD = 'AndresLopez'
+EMAIL_HOST_USER = 'truekeros.colombia@gmail.com'
+DEFAULT_FROM_EMAIL = 'truekeros.colombia@gmail.com'
+EMAIL_HOST_PASSWORD = 'truekerosyNani123'
 EMAIL_BACKED = 'django.core.mail.backeds.smtp.Email.Backed'
 EMAIL_USE_TLS = True

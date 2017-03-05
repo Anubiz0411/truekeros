@@ -1,12 +1,5 @@
 from django.conf.urls import url
-from .views import (
-    ListaArticulos,
-    ListaArticuloCategoria,
-    CrearArticulo,
-    VerArticulo,
-    EditarArticulo,
-    EliminarArticulo,
-)
+from .views import *
 
 urlpatterns = [
     url(r'^$', ListaArticulos.as_view(), name='lista_articulos'),
