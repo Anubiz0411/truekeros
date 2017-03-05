@@ -1,3 +1,5 @@
+#!usr/local/bin
+# coding: latin-1
 """
 Django settings for truekerosites project.
 
@@ -13,7 +15,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,11 +39,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'accounts',
+    
     'home',
+    'usuario',
+    'articulo',
+    'storages',
 
+    #All auteticatios
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+
+    'allauth.socialaccount.providers.facebook',
 ]
+
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,6 +87,35 @@ TEMPLATES = [
     },
 ]
 
+
+"""
+Configuaración de la aplicación django-allauth
+"""
+
+'#Se especifica el sistema de autenticación que se va a utilizar.'
+AUTHENTICATION_BACKENDS = (
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+"""
+Url a donde será redirigido el usuario una vez halla iniciado sesión
+desde alguna red social como facebook o twitter.
+"""
+LOGIN_REDIRECT_URL = '/'
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+"""
+Información que la aplicación solicitará a facebok, cuando un
+usuario se este registrando.
+"""
+
+
 WSGI_APPLICATION = 'truekerosites.wsgi.application'
 
 
@@ -79,12 +124,8 @@ WSGI_APPLICATION = 'truekerosites.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'truekeros_db',
-        'USER':'admin',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT':'',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'truekeros_db.sqlite3')
 
     }
 }
@@ -122,6 +163,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+"""
+Variables necesarias para acceder al almacenamiento de Dropbox.
+"""
+DROPBOX_OAUTH2_TOKEN = 'KDxx1ZptXnAAAAAAAAAACvtQ9lvh7bCV3Gm6YtgTcy7EQPim-wA_qX0Jw_nrV02m'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -131,13 +177,17 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # EMAIL SETTINGS
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_PORT = 25
 EMAIL_HOST_USER = 'andres.lopez0411@gmail.com'
 DEFAULT_FROM_EMAIL = 'andres.lopez0411@gmail.com'
 EMAIL_HOST_PASSWORD = 'AndresLopez'
+EMAIL_BACKED = 'django.core.mail.backeds.smtp.Email.Backed'
 EMAIL_USE_TLS = True

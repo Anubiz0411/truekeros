@@ -14,7 +14,7 @@
         <style>
           body {
             font-family: 'Bree Serif', serif;
-            font-size: 128px;
+            font-size: 16px;
           }
         </style>
       <!--Let browser know website is optimized for mobile-->
@@ -28,8 +28,17 @@
           <a href="#!" class="brand-logo center">TrueKeros</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="{% url 'account_signup' %}">Iniciar Secion</a></li>
-            <li><a href="{% url 'account_login' %}">Registrate</a></li>
+            <li><a href="{% url 'articulo:lista_articulos' %}" class="icon-home">Home</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="icon-user">{{user}}</a></li>
+                    {% if user.username == 'admin' %}
+                    <li><a class="icon-plus" href="{% url 'articulo:crear_articulo' %}">Post</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+                    {% else %}
+                    <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>
+                    <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarse</a></li>
+                    {% endif %}
           </ul>
          <!-- <ul class="left hide-on-med-and-down">
             <form>
@@ -51,8 +60,14 @@
         </div>
       </nav>
     </div>
+     
         {% block content %}{% endblock %}
-    </div>
+        <div class="container">
+         <hr>
+          <footer>
+          <p>&copy; 2017 Cliente Servidor, UTP.</p>
+        </footer>
+      </div>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script type="text/javascript" src="/static/js/materialize.min.js"></script>

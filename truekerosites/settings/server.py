@@ -1,5 +1,6 @@
 #!usr/local/bin
 # coding: latin-1
+
 """
 Se importa la configuración de la aplicacipón para obtener
 la instancia de la base de datos que está utilizando la aplicación.
@@ -12,9 +13,9 @@ de la aplicación y la base de datos del servidor (Heroku)
 """
 import dj_database_url
 
-"""#Se desactiva el modo debug de la aplicación, para que no muestre
+"""Se desactiva el modo debug de la aplicación, para que no muestre
 información detallada en caso de que ocurra un error."""
-DEBUG = False
+DEBUG = True
 
 
 DATABASES = settings.DATABASES
@@ -31,3 +32,5 @@ ALLOWED_HOSTS = ['*']
 Se especifica que la aplicación va almacenar los archivos estaticos mediante whitenoise.
 """
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+DROPBOX_ROOT_PATH = 'truekerosites/production'

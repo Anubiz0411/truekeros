@@ -1,3 +1,5 @@
+#!usr/local/bin
+# coding: latin-1
 """
 Django settings for truekerosites project.
 
@@ -39,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'home',
+    'usuario',
+    'articulo',
+    'storages',
 
     #All auteticatios
 
@@ -49,9 +54,6 @@ INSTALLED_APPS = [
 
 
     'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.twitter',
-    'allauth.socialaccount.providers.instagram',
 ]
 
 
@@ -86,22 +88,32 @@ TEMPLATES = [
 ]
 
 
+"""
+Configuaración de la aplicación django-allauth
+"""
+
+'#Se especifica el sistema de autenticación que se va a utilizar.'
 AUTHENTICATION_BACKENDS = (
-    
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
 )
 
-SOCIALACCOUNT_QUERY_EMAIL= True
+"""
+Url a donde será redirigido el usuario una vez halla iniciado sesión
+desde alguna red social como facebook o twitter.
+"""
+LOGIN_REDIRECT_URL = '/'
 
-SOCIALACCOUNT_PROVIDERS = {
-        'METHOD': 'oauth2',
-        'SCOPE': ['email',],
-}
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+"""
+Información que la aplicación solicitará a facebok, cuando un
+usuario se este registrando.
+"""
 
 
 WSGI_APPLICATION = 'truekerosites.wsgi.application'
@@ -151,6 +163,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+"""
+Variables necesarias para acceder al almacenamiento de Dropbox.
+"""
+DROPBOX_OAUTH2_TOKEN = 'KDxx1ZptXnAAAAAAAAAACvtQ9lvh7bCV3Gm6YtgTcy7EQPim-wA_qX0Jw_nrV02m'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -168,9 +185,9 @@ MEDIA_URL = '/media/'
 
 # EMAIL SETTINGS
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-DEFAULT_FROM_EMAIL = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'andres.lopez0411@gmail.com'
+DEFAULT_FROM_EMAIL = 'andres.lopez0411@gmail.com'
+EMAIL_HOST_PASSWORD = 'AndresLopez'
 EMAIL_BACKED = 'django.core.mail.backeds.smtp.Email.Backed'
 EMAIL_USE_TLS = True
