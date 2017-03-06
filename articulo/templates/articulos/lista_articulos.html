@@ -3,6 +3,7 @@
 {% block head_title %}Artículos{% endblock %}
 
 {% block content %}
+   <dir class="container">
     {% if lista_articulos %}
     <section id="seccion-posts">
     {% for articulo in lista_articulos %}
@@ -48,4 +49,5 @@
     </section>
     {% endif %}
     {% include 'articulos/categorias.html' %}
+    </dir> 
 {% endblock %}

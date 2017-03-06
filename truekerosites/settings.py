@@ -105,7 +105,7 @@ AUTHENTICATION_BACKENDS = (
 Url a donde será redirigido el usuario una vez halla iniciado sesión
 desde alguna red social como facebook o twitter.
 """
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/articulo/'
 
 SOCIALACCOUNT_QUERY_EMAIL = True
 
@@ -116,9 +116,12 @@ usuario se este registrando.
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',
-        'SCOPE': ['email', 'public_profile',]
+        'SCOPE': ['email', ]
     }
 }
+
+SOCIAL_AUTH_FACEBOOK_KEY = '224355551365076'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET ='8575456e75c2ac733ae8ff1aa085188c' #app key
 
 WSGI_APPLICATION = 'truekerosites.wsgi.application'
 

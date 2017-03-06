@@ -5,11 +5,13 @@
 {% block header %}{% endblock %}
 
 {% block content %}
+<div class="container">
 <h1 class="titulo-403 icon-search">Página no encontrada</h1>
 <div class="contenedor-error">
     <p>La página que busca, actualmente no existe.</p>
+    <center>
     <a href="{% url 'articulo:lista_articulos' %}" class="boton-home icon-home">Regresar</a>
+    </center>
 </div>
-
-
+</div>
 {% endblock %}

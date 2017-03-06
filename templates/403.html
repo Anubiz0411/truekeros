@@ -5,10 +5,12 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<h1 class="titulo-403 icon-warning">ACCESO DENEGADO</h1>
-<div class="contenedor-error">
+<div class="container">
+	<h1 class="titulo-403 icon-warning"><font color="teal">ACCESO DENEGADO</font></h1>
     <p>No estás autorizado para acceder a este contenido.</p>
-    <a href="{% url 'lista_articulos' %}" class="boton-home icon-home">Regresar</a>
+    <center>
+    <a href="{% url 'lista_articulos' %}" class="btn btn-primary">Regresar</a>
+    </center>
 </div>
 
 

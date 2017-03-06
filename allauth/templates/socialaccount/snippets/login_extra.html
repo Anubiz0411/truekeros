@@ -1,4 +1,8 @@
 {% load socialaccount %}
-
+<a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-block btn-social btn-facebook" style="background-color:#3b5998;text-align:center">
+  <span class="fa fa-facebook"></span>
+               Inicia Con Facebook
+ </a>
 {% providers_media_js %}
+
 
