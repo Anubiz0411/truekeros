@@ -3,11 +3,12 @@
 {% block title %}Contacto{% endblock title %}
 
 {% block content %}
+<div class="container">
     <div class="row">
         <div class="col-md-6 col-sm-offset-3">
             <div class="page-header">
+                <h2><font color="teal">Contactenos</font></h2>
                 <p>Tiene alguna Duda, queja o sujerencia?</p>
-                <h2>Contactenos</h2>
             </div>
 
             <form method="post" action="" enctype="multipart/form-data">
@@ -16,5 +17,6 @@
                 <button type="submit" class="btn btn-primary">Enviar</button>
                 <button type="submit" class="btn btn-primary" onclick="history.back()">Atras</button>
             </form>
+            </div>
 
 {% endblock content %}
