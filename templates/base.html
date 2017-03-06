@@ -29,9 +29,13 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
                     <li><a href="{% url 'home.index' %}" class="icon-home">Home</a></li>
-                    {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'crear_articulo' %}">Crear Articulos</a></li>
+                    <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+                    <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+                    {% elif user.is_authenticated %}
                     <li><a>{{user.first_name}}</a></li>
-                    <li><a href="{% url 'lista_articulos' %}">Articulos</a></li>
+                    <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
                     <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
                     <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
                     {% else %}
@@ -39,6 +43,7 @@
                     <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarte</a></li>
                     <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
                     {% endif %}
+
           </ul>
          <!-- <ul class="left hide-on-med-and-down">
             <form>

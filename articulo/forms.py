@@ -13,5 +13,5 @@ class ArticuloForm(forms.ModelForm):
 
         widgets = {
             'titulo': forms.TextInput(attrs={'class': 'input'}),
-            'contenido': forms.Textarea()
+            'contenido': forms.Textarea(),
         }

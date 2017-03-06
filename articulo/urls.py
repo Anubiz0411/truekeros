@@ -1,3 +1,6 @@
+#!usr/local/bin
+# coding: latin-1
+
 from django.conf.urls import url
 from .views import *
 
