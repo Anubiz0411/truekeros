@@ -35,16 +35,16 @@
                   <li><a href="{% url 'home.index' %}" class="icon-home">Home</a></li>
                   <li><div class="divider"></div></li>
                   {% if user.is_superuser %}
-                  <li><a href="{% url 'crear_articulo' %}">Crear Articulos</a></li>
+                  <li><a href="#">Crear Articulos</a></li>
                   <li><div class="divider"></div></li>
-                  <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+                  <li><a href="#">Ver Articulos</a></li>
                   <li><div class="divider"></div></li>
                   <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
                   <li><div class="divider"></div></li>
                   {% elif user.is_authenticated %}
                   <li><a>{{user.first_name}}</a></li>
                   <li><div class="divider"></div></li>
-                  <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+                  <li><a href="#">Ver Articulos</a></li>
                   <li><div class="divider"></div></li>
                   <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
                   <li><div class="divider"></div></li>
@@ -63,14 +63,14 @@
             <ul class="right hide-on-med-and-down">
               <li><a href="{% url 'home.index' %}" class="icon-home">Home</a></li>
               {% if user.is_superuser %}
-              <li><a href="{% url 'crear_articulo' %}">Crear Articulos</a></li>
-              <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
-              <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+              <li><a href="#">Crear Articulos</a></li>
+              <li><a href="#">Ver Articulos</a></li>
+              <li><a href="#" class="icon-sign-out">Salir</a></li>
               {% elif user.is_authenticated %}
               <li><a>{{user.first_name}}</a></li>
-              <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
-              <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
-              <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+              <li><a href="#">Ver Articulos</a></li>
+              <li><a href="#">Contactanos</a></li>
+              <li><a href="#" class="icon-sign-out">Salir</a></li>
               {% else %}
               <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>
               <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarte</a></li>
@@ -94,7 +94,7 @@
         <div class="container">
          <hr>
           <footer>
-          <p>&copy; 2017 Cliente Servidor, UTP.</p>
+          <p>&copy; 2017 Truekeros, UTP.</p>
         </footer>
       </div>
       <!--Import jQuery before materialize.js-->

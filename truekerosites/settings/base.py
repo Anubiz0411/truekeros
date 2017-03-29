@@ -38,10 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'home',
     'usuario',
-    'articulo',
     'storages',
 
     # The Django sites framework is required
@@ -53,7 +52,7 @@ INSTALLED_APPS = [
     # ... include the providers you want to enable:
 
     'allauth.socialaccount.providers.facebook',
- 
+
 ]
 
 
@@ -105,7 +104,7 @@ AUTHENTICATION_BACKENDS = (
 Url a donde será redirigido el usuario una vez halla iniciado sesión
 desde alguna red social como facebook o twitter.
 """
-LOGIN_REDIRECT_URL = '/articulo/'
+LOGIN_REDIRECT_URL = '/home/'
 
 SOCIALACCOUNT_QUERY_EMAIL = True
 
@@ -169,11 +168,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-"""
-Variables necesarias para acceder al almacenamiento de Dropbox.
-"""
-DROPBOX_OAUTH2_TOKEN = 'KDxx1ZptXnAAAAAAAAAACvtQ9lvh7bCV3Gm6YtgTcy7EQPim-wA_qX0Jw_nrV02m'
 
 
 # Static files (CSS, JavaScript, Images)
