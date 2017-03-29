@@ -13,7 +13,6 @@ from django.views import generic
 
 # Create your views here.
 
-
 def index_view(request):
 	return render(request, 'home/index.html')
 

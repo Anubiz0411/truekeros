@@ -330,7 +330,7 @@ Materialize.guid = (function() {
 })();
 
 /**
- * Escapes hash from special characters
+ * Escapes hash from special characters$('.
  * @param {string} hash  String returned from this.hash
  * @returns {string}
  */

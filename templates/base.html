@@ -22,29 +22,61 @@
     </head>
 
     <body>
-       <div class="navbar-fixed">
+      <div class="navbar-fixed">
        <nav>
         <div class="nav-wrapper teal">
           <a href="{% url 'home.index' %}" class="brand-logo" >TrueKeros</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-                    <li><a href="{% url 'home.index' %}" class="icon-home">Home</a></li>
-                    {% if user.is_superuser %}
-                    <li><a href="{% url 'crear_articulo' %}">Crear Articulos</a></li>
-                    <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
-                    <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
-                    {% elif user.is_authenticated %}
-                    <li><a>{{user.first_name}}</a></li>
-                    <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
-                    <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
-                    <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
-                    {% else %}
-                    <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>
-                    <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarte</a></li>
-                    <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
-                    {% endif %}
-
-          </ul>
+            <ul id="mobile-demo" class="side-nav">
+              <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                  <li class="bold"><a class="center">Menú</a>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'home.index' %}" class="icon-home">Home</a></li>
+                  <li><div class="divider"></div></li>
+                  {% if user.is_superuser %}
+                  <li><a href="{% url 'crear_articulo' %}">Crear Articulos</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+                  <li><div class="divider"></div></li>
+                  {% elif user.is_authenticated %}
+                  <li><a>{{user.first_name}}</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+                  <li><div class="divider"></div></li>
+                  {% else %}
+                  <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarte</a></li>
+                  <li><div class="divider"></div></li>
+                  <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
+                  {% endif %}
+                </ul>
+              </li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="{% url 'home.index' %}" class="icon-home">Home</a></li>
+              {% if user.is_superuser %}
+              <li><a href="{% url 'crear_articulo' %}">Crear Articulos</a></li>
+              <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+              <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+              {% elif user.is_authenticated %}
+              <li><a>{{user.first_name}}</a></li>
+              <li><a href="{% url 'lista_articulos' %}">Ver Articulos</a></li>
+              <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
+              <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
+              {% else %}
+              <li><a href="{% url 'account_login' %}" class="icon-sign-in">Entrar</a></li>
+              <li><a href="{% url 'account_signup' %}" class="icon-user">Registrarte</a></li>
+              <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
+              {% endif %}
+            </ul>
          <!-- <ul class="left hide-on-med-and-down">
             <form>
               <div class="input-field" style="width: 390%">
@@ -54,15 +86,6 @@
               </div>
             </form>
           </ul> -->
-          <ul id="mobile-demo" class="side-nav">
-            <li class="no-padding">
-              <ul class="collapsible collapsible-accordion">
-                <li class="bold"><a href="#" class="waves-effect waves-teal">Iniciar Sesión</a></li>
-                <li class="bold"><a href="#" class="waves-effect waves-teal">Regístrate</a></li>
-                <li class="bold"><a href="#" class="waves-effect waves-teal">Contactanos</a></li>
-              </ul>
-            </li>
-          </ul>
         </div>
       </nav>
     </div>
@@ -77,5 +100,6 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+      <script type="text/javascript" src="/static/js/dropmenu.js"></script>
     </body>
   </html>
