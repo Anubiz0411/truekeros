@@ -10,7 +10,7 @@
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
-      <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
         <style>
           body {
             font-family: 'Bree Serif', serif;
@@ -26,7 +26,7 @@
        <nav>
         <div class="nav-wrapper teal">
           <a href="{% url 'home.index' %}" class="brand-logo" >TrueKeros</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#!" onclick="sideMenu" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="mobile-demo" class="side-nav">
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
@@ -89,7 +89,7 @@
         </div>
       </nav>
     </div>
-     
+
         {% block content %}{% endblock %}
         <div class="container">
          <hr>
