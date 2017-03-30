@@ -19,12 +19,15 @@
       </div>
     {% endif %}
 
-    <h3>Upload a picture</h3> 
-    <form  enctype="multipart/form-data" action="" method="POST" id="upload-image-form"> 
-        {% csrf_token %}
+    <h3>Upload a picture</h3>
+    <form  enctype="multipart/form-data" action="" method="POST" id="upload-image-form">
+        {% csrf_token%}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Send&raquo;</button>
     </form>
+
+
+
 
 
 {% endblock %}
