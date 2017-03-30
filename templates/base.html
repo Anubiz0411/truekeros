@@ -38,6 +38,8 @@
                   {% elif user.is_authenticated %}
                   <li><a>{{user.first_name}}</a></li>
                   <li><div class="divider"></div></li>
+                  <li><a href="/blog/post/new">Crear Articulos</a></li>
+                  <li><div class="divider"></div></li>
                   <li><a href="#">Ver Articulos</a></li>
                   <li><div class="divider"></div></li>
                   <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
