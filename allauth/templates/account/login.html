@@ -7,23 +7,23 @@
 
 {% block content %}
 <div class="container">
-<h1><font color="teal">Iniciar sesión</font></h1>
+<h1><font color="blue">Iniciar sesión</font></h1>
 
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Por favor inicia con una cuenta existente. 
+<p>{% blocktrans with site.name as site_name %}Por favor inicia con una cuenta existente.
 Ó, <a href="{{ signup_url }}">Registrate aqui</a>
 para crear una cuenta en {{ site_name }}:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
-  
+
 <div class="center login-or">{% trans 'O' %}</div>
 
 {% include "socialaccount/snippets/login_extra.html" %}
 </div>
 {% else %}
-<p>{% blocktrans %}Si aún no tienes cuenta 
+<p>{% blocktrans %}Si aún no tienes cuenta
 <a href="{{ signup_url }}">Regístrate</a>.{% endblocktrans %}</p>
 {% endif %}
 
@@ -33,10 +33,12 @@ para crear una cuenta en {{ site_name }}:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <center>
-  <a class="btn btn-primary" href="{% url 'account_reset_password' %}">{% trans "Olvidaste su contraseña?" %}</a>
-  <button type="submit" class="btn btn-primary">{% trans "Entrar" %}</button>
+  <div class="container">
+    <div class="row">
+      <div class="col s5"><button type="submit" class="btn btn-primary blue">{% trans "Entrar" %}</button></div>
+      <div class="col s5"><a class="btn btn-primary blue" href="{% url 'account_reset_password' %}">{% trans "¿Olvidaste tu contraseña?" %}</a></div>
+    </div>
+  </div>
 </form>
-</center>
 </div>
 {% endblock %}

@@ -10,13 +10,8 @@
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="/static/css/myclass.css"/>
       <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
-        <style>
-          body {
-            font-family: 'Bree Serif', serif;
-            font-size: 16px;
-          }
-        </style>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -24,7 +19,7 @@
     <body>
       <div class="navbar-fixed">
        <nav>
-        <div class="nav-wrapper teal">
+        <div class="nav-wrapper blue">
           <a href="{% url 'home.index' %}" class="brand-logo" >TrueKeros</a>
           <a href="#!" onclick="sideMenu" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="mobile-demo" class="side-nav">
@@ -65,7 +60,7 @@
               {% if user.is_superuser %}
               <li><a href="#">Crear Articulos</a></li>
               <li><a href="#">Ver Articulos</a></li>
-              <li><a href="#" class="icon-sign-out">Salir</a></li>
+              <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
               {% elif user.is_authenticated %}
               <li><a>{{user.first_name}}</a></li>
               <li><a href="#">Ver Articulos</a></li>
@@ -91,12 +86,14 @@
     </div>
 
         {% block content %}{% endblock %}
-        <div class="container">
-         <hr>
-          <footer>
-          <p>&copy; 2017 Truekeros, UTP.</p>
+
+        <footer class="page-footer blue">
+          <div class="footer-copyright center">
+            <div class="container">
+            <p>&copy; 2017 Truekeros, UTP.</p>
+            </div>
+          </div>
         </footer>
-      </div>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script type="text/javascript" src="/static/js/materialize.min.js"></script>
