@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'usuario',
     'storages',
+    'blog',
 
     # The Django sites framework is required
     'django.contrib.sites',

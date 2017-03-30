@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'home',
     'usuario',
     'storages',
-
+    'blog',
     # The Django sites framework is required
     'django.contrib.sites',
 
@@ -179,9 +179,9 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # EMAIL SETTINGS
 EMAIL_HOST = 'smtp.gmail.com'
