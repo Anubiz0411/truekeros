@@ -104,7 +104,7 @@ desde alguna red social como facebook o twitter.
 """
 LOGIN_REDIRECT_URL = '/home/'
 
-SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_QUERY_EMAIL = False
 
 """
 Información que la aplicación solicitará a facebok, cuando un
@@ -128,12 +128,9 @@ SOCIALACCOUNT_PROVIDERS = {
             'gender',
             'updated_time',
         ],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.4',
     }
 }
+
 SOCIAL_AUTH_FACEBOOK_KEY = '224355551365076'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET ='8575456e75c2ac733ae8ff1aa085188c' #app key
 
