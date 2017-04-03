@@ -15,7 +15,7 @@ import dj_database_url
 
 """Se desactiva el modo debug de la aplicación, para que no muestre
 información detallada en caso de que ocurra un error."""
-DEBUG = False
+DEBUG = True
 
 
 DATABASES = settings.DATABASES
