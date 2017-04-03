@@ -29,7 +29,6 @@ urlpatterns = [
     url(r'^home/', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^blog/', include('blog.urls')),
 ]
 
 if settings.DEBUG:

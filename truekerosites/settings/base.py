@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'home',
-    'usuario',
-    'storages',
-    'blog',
 
     # The Django sites framework is required
     'django.contrib.sites',
@@ -116,10 +113,27 @@ usuario se este registrando.
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',
-        'SCOPE': ['email', ]
+        'SCOPE': ['email', 'public_profile',],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+            'verified',
+            'locale',
+            'timezone',
+            'link',
+            'gender',
+            'updated_time',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v2.4',
     }
 }
-
 SOCIAL_AUTH_FACEBOOK_KEY = '224355551365076'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET ='8575456e75c2ac733ae8ff1aa085188c' #app key
 
