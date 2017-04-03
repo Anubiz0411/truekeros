@@ -3,11 +3,10 @@
 {% block title %}TrueKeros{% endblock title %}
 
 {% block content %}
-      <div class="container">
         <h1><font color="blue">Bienvenidos!</font></h1>
         <p><font size=5>TrueKeros es un proyecto realizado por estudiantes de Ingenieria en Sistemas y Computación pertenecientes a la Universidad Tecnológica de Pereira(UTP).</font></p>
       </div>
-      {% if user.is_superuser %}
+      {% if user.is_authenticated %}
       <div class="fixed-action-btn horizontal click-to-toggle">
         <a class="btn-floating btn-large blue">
           <i class="material-icons">menu</i>
@@ -24,6 +23,5 @@
           <div class="col s6"><a href="{% url 'account_signup' %}" class="btn btn-primary blue"> Registrate&raquo;</a></div>
           <div class="col s6"><a href="{% url 'account_login' %}" class="btn btn-primary"> TrueKea&raquo;</a></div>
         </div>
-    </div>
       {% endif %}
 {% endblock content %}
