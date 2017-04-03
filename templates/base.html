@@ -20,7 +20,7 @@
        <nav>
         <div class="nav-wrapper blue">
           <a href="{% url 'home.index' %}" class="brand-logo" >TrueKeros</a>
-          <a href="#!" onclick="sideMenu" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="mobile-demo" class="side-nav">
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
@@ -85,18 +85,25 @@
       </nav>
     </div>
 <div class="container">
+  <div class="card-panel">
     {% block content %}{% endblock %}
+    </div>
 </div>
- <!--       <footer class="page-footer blue">
-          <div class="footer-copyright center">
-            <div class="container">
-            <p>&copy; 2017 Truekeros, UTP.</p>
-            </div>
-          </div>
-        </footer> -->
+ <footer class="page-footer blue">
+    <div class="footer-copyright">
+      <div class="container">
+      &copy; 2017 Truekeros, UTP.
+      </div>
+    </div>
+  </footer>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script type="text/javascript" src="/static/js/materialize.min.js"></script>
-      <script type="text/javascript" src="/static/js/dropmenu.js"></script>
+      <script>
+        $(document).ready(function(){
+            $(".button-collapse").sideNav();
+        });
+      </script>
+
     </body>
   </html>

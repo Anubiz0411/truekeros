@@ -5,16 +5,21 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
 	height:100%;
-	margin:0;
+	margin: 0;
+  	margin-bottom: 70px;
 }
 main {
 	flex: 1 0 auto;
 }
+html {
+  min-height: 100%;
+  position: relative;
+}
 
 footer {
-	bottom: 1;
-	color: white;
-	width: 100%;
-	margin-top:15px;
-	position: absolute;
+ 	position:fixed;
+   	left:0px;
+   	bottom:0px;
+   	height:65px;
+   	width:100%;
 }

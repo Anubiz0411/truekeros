@@ -3,25 +3,73 @@
 {% block title %}TrueKeros{% endblock title %}
 
 {% block content %}
-        <h1><font color="blue">Bienvenidos!</font></h1>
-        <p><font size=5>TrueKeros es un proyecto realizado por estudiantes de Ingenieria en Sistemas y Computación pertenecientes a la Universidad Tecnológica de Pereira(UTP).</font></p>
-      </div>
-      {% if user.is_authenticated %}
-      <div class="fixed-action-btn horizontal click-to-toggle">
-        <a class="btn-floating btn-large blue">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul>
-          <li><a href="#" class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-          <li><a href="#" class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a href="#" class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
-      </div>
-      {% elif user.is_anonymous %}
-      <div class="container">
-        <div class="row">
-          <div class="col s6"><a href="{% url 'account_signup' %}" class="btn btn-primary blue"> Registrate&raquo;</a></div>
-          <div class="col s6"><a href="{% url 'account_login' %}" class="btn btn-primary"> TrueKea&raquo;</a></div>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col m4">
+      <div class="card ">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="/media/j7.jpg">
         </div>
-      {% endif %}
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Cambio Samsung J7<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">Ver Trueke</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Cambio Samsung J7<i class="material-icons right">close</i></span>
+          <p>Cambio celular en buen estado, por otro igual o mejor</p>
+        </div>
+      </div>
+    </div>
+    <div class="col m4">
+      <div class="card ">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="/media/lenovo.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Cambio Lenovo Yoga<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">Ver Trueke</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Cambio Lenovo Yoga<i class="material-icons right">close</i></span>
+          <p>Cambio computador portatil en buen estado, por otro igual o mejor</p>
+        </div>
+      </div>
+    </div>
+    <div class="col m4">
+      <div class="card ">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="/media/addidas.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Cambio Zapatos Addidas<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">Ver Trueke</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Cambio Zapatos Addidas<i class="material-icons right">close</i></span>
+          <p>Cambio zapatos addidas en buen estado, por otro celular o camisas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if user.is_authenticated %}
+  <div class="fixed-action-btn horizontal click-to-toggle">
+    <a class="btn-floating btn-large blue">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a href="#" class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a href="#" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a href="#" class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>
+  {% elif user.is_anonymous %}
+    <div class="container">
+    <div class="row">
+      <div class="col m6"><a href="{% url 'account_signup' %}" class="btn btn-primary blue"> Registrate&raquo;</a></div>
+      <div class="col m6"><a href="{% url 'account_login' %}" class="btn btn-primary"> TrueKea&raquo;</a></div>
+    </div>
+  </div>
+
+{% endif %}
 {% endblock content %}
