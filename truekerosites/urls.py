@@ -25,10 +25,12 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    url(r'^', include('home.urls')),
+    url(r'^', include('publicacion.urls')),
+    url(r'^publicacion/', include('publicacion.urls')),
     url(r'^home/', include('home.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
+
 ]
 
 if settings.DEBUG:

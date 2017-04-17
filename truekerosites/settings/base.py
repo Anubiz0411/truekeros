@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'gdstorage',
 
     'home',
+    'publicacion',
 
     # The Django sites framework is required
     'django.contrib.sites',
@@ -53,6 +55,13 @@ INSTALLED_APPS = [
 
 ]
 
+#
+# Google Drive Storage Settings
+#
+"""
+Ruta en donde se encuentra la llave secreta de la aplicación de Google Drive SDK.
+"""
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE =os.path.join(BASE_DIR , 'client_id.json')
 
 SITE_ID = 1
 
@@ -102,7 +111,7 @@ AUTHENTICATION_BACKENDS = (
 Url a donde será redirigido el usuario una vez halla iniciado sesión
 desde alguna red social como facebook o twitter.
 """
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/publicacion/'
 
 SOCIALACCOUNT_QUERY_EMAIL = False
 
