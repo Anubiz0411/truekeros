@@ -8,7 +8,7 @@
                 <h2><font color="blue">{{ object.titulo}}</font></h2>
             </div>
 	
-	<img src="/media/{{ entrada.imagen }}" width="780" height="290"/>
+	<img class="responsive-img" src="{{ entrada.imagen.url }}"/>
 	<p>{{ object.contenido }}</p>
 	 <div class="row">
     <form class="col s12">

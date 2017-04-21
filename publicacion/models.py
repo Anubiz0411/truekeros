@@ -8,13 +8,10 @@ from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, Goo
 Se crean los permisos y la instancia del almacenamiento de Google Drive
 para guardar las imagenes de los posts.
 """
-from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, GoogleDrivePermissionRole, GoogleDriveFilePermission
-
 permission =  GoogleDriveFilePermission(
    GoogleDrivePermissionRole.READER,
-   GoogleDrivePermissionType.USER,
-   "truekeros.colombia@gmail.com"
-)
+   GoogleDrivePermissionType.ANYONE,
+ )
 
 gd_storage = GoogleDriveStorage(permissions=(permission, ))
 
@@ -24,7 +21,7 @@ class Entrada(models.Model):
 	"""docstring for Entrada"""
 	titulo =  models.CharField(max_length=200)
 	contenido = models.TextField()
-	imagen = models.ImageField(upload_to="/articulo/",
+	imagen = models.ImageField(upload_to="/truekeros/",
         storage=gd_storage,
         null=True,
         blank=True,
