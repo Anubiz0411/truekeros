@@ -24,7 +24,7 @@ def send_email_contact(email_usuario, subject, body):
         subject='Nuevo email de contacto',
         message=body,
         from_email= settings.EMAIL_HOST_USER,
-        recipient_list=[email_usuario,]
+        recipient_list=[settings.EMAIL_HOST_USER]
     )
 
 class ContactView(generic.FormView):
