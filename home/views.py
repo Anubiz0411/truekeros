@@ -3,7 +3,7 @@
 
 from django.shortcuts import render
 from django.template import RequestContext
-from truekerosites.settings import EMAIL_HOST_USER
+from django.conf import settings
 from django.utils import timezone
 from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
@@ -23,14 +23,14 @@ def send_email_contact(email_usuario, subject, body):
     send_mail(
         subject='Nuevo email de contacto',
         message=body,
-        from_email=email_usuario,
-        recipient_list=[EMAIL_HOST_USER]
+        from_email= settings.EMAIL_HOST_USER,
+        recipient_list=[email_usuario,]
     )
 
 class ContactView(generic.FormView):
 
     template_name = 'home/contact.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('home.contact')
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated():

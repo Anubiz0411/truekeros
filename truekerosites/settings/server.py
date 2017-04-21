@@ -15,7 +15,7 @@ import dj_database_url
 
 """Se desactiva el modo debug de la aplicación, para que no muestre
 información detallada en caso de que ocurra un error."""
-DEBUG = True
+DEBUG = False
 
 
 DATABASES = settings.DATABASES
@@ -32,5 +32,8 @@ ALLOWED_HOSTS = ['*']
 Se especifica que la aplicación va almacenar los archivos estaticos mediante whitenoise.
 """
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-DROPBOX_ROOT_PATH = 'truekerosites/production'
+"""
+Configuracion Variables de Entorno Heroku
+"""
+EMAIL_HOST_USER= os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']

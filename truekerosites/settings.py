@@ -140,8 +140,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-SOCIAL_AUTH_FACEBOOK_KEY = '224355551365076'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET ='8575456e75c2ac733ae8ff1aa085188c' #app key
 
 WSGI_APPLICATION = 'truekerosites.wsgi.application'
 
@@ -207,8 +205,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # EMAIL SETTINGS
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = 'truekeros.colombia@gmail.com'
-DEFAULT_FROM_EMAIL = 'truekeros.colombia@gmail.com'
-EMAIL_HOST_PASSWORD = 'truekerosyNani123'
-EMAIL_BACKED = 'django.core.mail.backeds.smtp.Email.Backed'
+EMAIL_BACKEND = 'django.core.mail.backeds.smtp.Email.Backed'
 EMAIL_USE_TLS = True
