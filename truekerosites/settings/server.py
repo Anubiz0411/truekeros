@@ -12,6 +12,7 @@ dj_database_url: Realiza una sincronización entre la base de datos
 de la aplicación y la base de datos del servidor (Heroku)
 """
 import dj_database_url
+import os
 
 """Se desactiva el modo debug de la aplicación, para que no muestre
 información detallada en caso de que ocurra un error."""
