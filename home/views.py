@@ -11,22 +11,6 @@ from django.core.mail import send_mail
 from .forms import ContactUsuarioAnonimoForm, ContactUsuarioLoginForm
 from django.views import generic
 
-# Create your views here.
-
-def index_view(request):
-	return render(request, 'home/index.html')
-
-# Creamos una función para el envió de email
-# (es muy simple, solo para demostrar como enviar un email)
-def send_email_contact(email_usuario, subject, body):
-    body = '{} ha enviado un email de contacto\n\n{}\n\n{}'.format(email_usuario, subject, body)
-    send_mail(
-        subject='Nuevo email de contacto',
-        message=body,
-        from_email= settings.EMAIL_HOST_USER,
-        recipient_list=[settings.EMAIL_HOST_USER]
-    )
-
 class ContactView(generic.FormView):
 
     template_name = 'home/contact.html'

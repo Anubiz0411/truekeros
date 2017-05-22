@@ -21,7 +21,7 @@ class Entrada(models.Model):
 	"""docstring for Entrada"""
 	titulo =  models.CharField(max_length=200)
 	contenido = models.TextField()
-	imagen = models.ImageField(upload_to="/truekeros/",
+	imagen = models.ImageField(upload_to="/media/",
         storage=gd_storage,
         null=True,
         blank=True,

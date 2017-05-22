@@ -19,14 +19,14 @@
       <div class="navbar-fixed">
        <nav>
         <div class="nav-wrapper blue">
-          <a href="{% url 'home.index' %}" class="brand-logo" >TrueKeros</a>
+          <a href="/publicacion/" class="brand-logo" >TrueKeros</a>
           <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="mobile-demo" class="side-nav">
               <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                   <li class="bold"><a class="center">Menú</a>
                   <li><div class="divider"></div></li>
-                  <li><a href="{% url 'home.index' %}" class="icon-home">¿Quieres TrueKear Algo?</a></li>
+                  <li><a href="/publicacion/" class="icon-home">¿Quieres TrueKear Algo?</a></li>
                   <li><div class="divider"></div></li>
                   {% if user.is_superuser %}
                   <li><a href="#"></a></li>
@@ -38,7 +38,7 @@
                   {% elif user.is_authenticated %}
                   <li><a>{{user.first_name}}</a></li>
                   <li><div class="divider"></div></li>
-                  <li><a href="#">¿Tienes Algo Para TrueKear?</a></li>
+                  <li><a href="/publicacion/crear">¿Tienes Algo Para TrueKear?</a></li>
                   <li><div class="divider"></div></li>
                   <li><a href="#">Mis TrueKes</a></li>
                   <li><div class="divider"></div></li>
@@ -57,13 +57,12 @@
               </li>
             </ul>
             <ul class="right hide-on-med-and-down">
-              <li><a href="{% url 'home.index' %}" class="icon-home">¿Quieres TrueKear Algo?</a></li>
+              <li><a href="/publicacion/" class="icon-home">¿Quieres TrueKear Algo?</a></li>
               {% if user.is_superuser %}
               <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
               {% elif user.is_authenticated %}
               <li><a href="#">Hola! {{ user.first_name }}</a></li>
-              <li><a href="#">¿Tienes Algo Para TrueKear?</a></li>
-              <li><a href="#">Mis TrueKes</a></li>
+              <li><a href="/publicacion/crear">¿Tienes Algo Para TrueKear?</a></li>
               <li><a href="{% url 'home.contact' %}">Contactanos</a></li>
               <li><a href="{% url 'account_logout' %}" class="icon-sign-out">Salir</a></li>
               {% else %}
