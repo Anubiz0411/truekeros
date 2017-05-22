@@ -25,6 +25,7 @@ class CrearPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Entrada
     form_class = PostForm
     template_name = 'crear_post.html'
+    success_url = reverse_lazy('account_login')
     login_url = reverse_lazy('account_login')
     success_message = u'El post %(titulo)s ha sido creado exitosamente.'
 
