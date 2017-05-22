@@ -27,7 +27,7 @@ class Entrada(models.Model):
         blank=True,
 )
 	email = models.EmailField(null=False)
-	number = models.IntegerField(null=None)
+	number = models.CharField(max_length=15, null=None)
 	slug = models.SlugField(editable=False )
 
 	def __unicode__(self):
