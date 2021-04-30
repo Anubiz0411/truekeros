@@ -24,7 +24,7 @@ python-dateutil==2.6.0
 python-openid==2.2.5
 requests==2.13.0
 requests-oauthlib==0.8.0
-rsa==3.4.2
+rsa==4.7
 six==1.10.0
 typing==3.5.3.0
 uritemplate==3.0.0
